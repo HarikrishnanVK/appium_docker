@@ -30,18 +30,10 @@ export const config: Options.Testrunner = {
     //
 
     capabilities: [
-        // {
-        //     browserName: 'chrome',
-        //     acceptInsecureCerts: true,
-        // },
-        // {
-        //     browserName: 'firefox',
-        //     acceptInsecureCerts: true,
-        // },
         {
             platformName: "android",
             "appium:platformVersion": "11.0",
-            "appium:avd": "Pixel_4_API_30",
+            "appium:deviceName": "127.0.0.3:5554",
             'appium:browserName': "chrome",
             "appium:automationName": "UIAutomator2",
             "appium:networkSpeed": "evdo",
@@ -50,7 +42,7 @@ export const config: Options.Testrunner = {
         {
             platformName: "android",
             "appium:platformVersion": "11.0",
-            "appium:avd": "Nexus_5X_API_30",
+            "appium:deviceName": "127.0.0.4:5555",
             'appium:browserName': "chrome",
             "appium:automationName": "UIAutomator2",
             "appium:networkSpeed": "evdo",
@@ -59,7 +51,7 @@ export const config: Options.Testrunner = {
         {
             platformName: "android",
             "appium:platformVersion": "11.0",
-            "appium:avd": "Pixel_2_API_30",
+            "appium:deviceName": "127.0.0.5:5558",
             'appium:browserName': "chrome",
             "appium:automationName": "UIAutomator2",
             "appium:networkSpeed": "evdo",
@@ -119,7 +111,7 @@ export const config: Options.Testrunner = {
             'appium',
             {
                 args: {
-                    address: '127.0.0.1',
+                    address: 'localhost',
                     port: 4723,
                     allowInsecure: [
                         'chromedriver_autodownload'
@@ -127,23 +119,24 @@ export const config: Options.Testrunner = {
                 },
                 logPath: './appiumlogs',
             }
+
+            // [
+            //     'chromedriver',
+            //     {
+            //         logFileName: 'wdio-chromedriver.log', // default
+            //         outputDir: './chromedriver-logs', // overwrites the config.outputDir
+            //         args: ['--silent']
+            //     }
+            // ],
+            // [
+            //     'geckodriver',
+            //     {
+            //         outputDir: './geckodriver-logs',
+            //         geckodriverOptions: {
+            //             log: 'debug' // set log level of driver
+            //         }
+            //     }],
         ],
-        // [
-        //     'chromedriver',
-        //     {
-        //         logFileName: 'wdio-chromedriver.log', // default
-        //         outputDir: './chromedriver-logs', // overwrites the config.outputDir
-        //         args: ['--silent']
-        //     }
-        // ],
-        // [
-        //     'geckodriver',
-        //     {
-        //         outputDir: './geckodriver-logs',
-        //         geckodriverOptions: {
-        //             log: 'debug' // set log level of driver
-        //         }
-        //     }],
     ],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber

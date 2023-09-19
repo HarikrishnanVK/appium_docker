@@ -1,0 +1,46 @@
+version: '3.3'
+services:
+  samsung_galaxy_s10:
+    image: budtmo/docker-android:emulator_10.0
+    devices:
+      - /dev/kvm
+    environment:
+      - 'EMULATOR_DEVICE=Samsung Galaxy S10'
+      - WEB_VNC=true
+    container_name: samsung_galaxy_s10
+    ports:
+      - "6080:6080"
+      - "127.0.0.3:5554:5555"
+  
+  nexus_5:
+    image: budtmo/docker-android:emulator_11.0
+    devices:
+      - /dev/kvm
+    environment:
+      - 'EMULATOR_DEVICE=Nexus 5'
+      - WEB_VNC=true
+    container_name: nexus_5
+    ports:
+      - "6090:6080"
+      - "127.0.0.4:5555:5555"
+
+  nexus_7_tab:
+    image: budtmo/docker-android:emulator_12.0
+    devices:
+      - /dev/kvm
+    environment:
+      - 'EMULATOR_DEVICE=Nexus 7'
+      - WEB_VNC=true
+    container_name: nexus_7_tab
+    ports:
+      - "6070:6080"
+      - "127.0.0.5:5558:5555"
+
+
+ 
+
+
+
+
+
+
